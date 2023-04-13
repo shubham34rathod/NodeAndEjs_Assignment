@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body{
+            background-color: lightblue;
+        }
+        .box1{
+            width: 97.5%;
+            background-color: aliceblue;
+            font-size: 20px;
+            padding: 10px;
+            margin: 10px;
+        }
+        .btn{
+            display: flex;
+        }
+        button{
+            width: 130px;
+            height: 30px;
+            border-radius: 5px;
+            border: none;
+            color: white;
+            margin-right: 10px;
+        }
+        .false{
+            color: red;
+        }
+        .null{
+            color: yellow;
+        }
+        .true{
+            color: green;
+        }
+    </style>
+    <title>Document</title>
+</head>
+<body>
+    <div class="box" style="width: 98%;height: 100px; background-color: lightgreen; display: flex;padding-left: 20px;">
+        <h1>Assignment 2</h1>
+    </div>
+    <div>
+    <% let tmp=null %>
+        <%data.forEach((a,index)=>{  %>
+             <div class="box1">
+                <% tmp=a.boolean %>
+                <div class="<%=tmp%>">
+                    <p><b>Name:-</b><%=a.name %></p>
+                    <p><b>Email:-</b><%=a.email%></p>
+                </div>
+                <!-- <p><%=a._id%></p> -->
+                <div class="btn">
+                    <form action="/users/<%= a._id %>" method="GET">
+                        <button  style="background-color: green;" type="submit">Promote/Demote</button>
+                    </form>
+                    <form action="/deleteUsers/<%= a._id %>" method="DELETE">
+                        <button  style="background-color: red;">Delete</button>
+                     </form>
+                        
+                </div>
+                    
+             </div>
+        <% }) %>
+    </div>
+    <a href="/form">Add_User</a>
+    <!-- <script>
+        function fn(a)
+        {
+            console.log(a);
+            // console.log("shubham rathod");
+        }
+    </script> -->
+</body>
+</html>
